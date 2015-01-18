@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>"Hckrnws"</title>
@@ -9,22 +10,30 @@
     <!-- <link rel="stylesheet" href="vendor/some.contrib.css"> -->
     <!-- bower:css -->
     <link rel="stylesheet" href="lib/ionic/release/css/ionic.css" />
+    <link rel="stylesheet" href="lib/famous-angular/dist/famous-angular.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
+</head>
 
-  <body ng-app="Hckrnws">
+<body ng-app="Hckrnws" ng-controller="MainController">
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">Ionic Blank Starter</h1>
+        </ion-header-bar>
+        <ion-content>
+            <fa-scroll-view>
+                <fa-view ng-repeat="item in content">
+                    <img src="{{item.image}}">
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.body}}</p>
+                </fa-view>
+            </fa-scroll-view>
+        </ion-content>
     </ion-pane>
 
     <!-- build:js scripts/vendor.js -->
@@ -37,6 +46,9 @@
     <script src="lib/collide/collide.js"></script>
     <script src="lib/ionic/release/js/ionic.js"></script>
     <script src="lib/ionic/release/js/ionic-angular.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+    <script src="lib/famous-angular/dist/famous-angular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -44,9 +56,12 @@
     <script src="cordova.js"></script>
 
 
-        <!-- build:js scripts/scripts.js -->
-        <script src="scripts/config.js"></script>
-        <script src="scripts/app.js"></script>
-        <!-- endbuild -->
+    <!-- build:js scripts/scripts.js -->
+    <script src="scripts/config.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>
